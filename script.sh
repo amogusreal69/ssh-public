@@ -60,10 +60,6 @@ add() {
             rm -f "${TMP_DOWNLOAD_LOCATION}/__tmp___amogus___key"
             rm -f "${TMP_DOWNLOAD_LOCATION}/__tmp___amogus__key___check"
             echo -e "\033[92m● Support SSH key installed successfully!\e[0m"
-            echo ""
-            next_steps
-            echo ""
-            save_next_steps
         else
             echo -e "\e[1;31m● Support SSH key verification failed! SSH Key didn't match checksum!\e[0m"
         fi
@@ -97,39 +93,6 @@ check_ssh_key() {
         echo -e "\033[92m○ To add my support SSH key, run the following command:\e[0m"
         echo -e "  \e[33mwget -qO- https://${DOWNLOAD_URL}/script.sh | bash -s -- add\e[0m"
     fi
-}
-
-next_steps() {
-    echo -e "\e[36m=========================================\e[0m"
-    echo -e "\033[92m            Next Steps                  \e[0m"
-    echo -e "\e[36m=========================================\e[0m"
-    echo -e "\033[92m● What you can do next:\e[0m"
-    echo -e "  \e[33m○ Share your server's IP Address:\e[0m If you need support and I asked you to run this script, please share your server's IP address, as well as your SSH port."
-    echo -e "    \e[1;31m○ Please, do not share your server's password, as I will not use it. If you are still using passwords, I recommend migrating to SSH Keys. It's safer.\e[0m"
-    echo -e "  \e[33m○ Remove the SSH key:\e[0m Use \`wget -qO- https://${DOWNLOAD_URL}/script.sh | bash -s -- remove\` if you no longer need the key."
-    echo -e "  \e[33m○ Check key status:\e[0m Use \`wget -qO- https://${DOWNLOAD_URL}/script.sh | bash -s -- check\` to confirm if the key is installed."
-    echo -e "  \e[33m○ Visit the repository:\e[0m Check out the GitHub repo at \e[33mhttps://github.com/amogusreal69/ssh\e[0m for updates."
-    echo -e "\e[36m=========================================\e[0m"
-}
-
-save_next_steps() {
-    cat <<EOF > ~/next_steps.txt
-=========================================
-            Next Steps                  
-=========================================
-● What you can do next:
-  ○ Share your server's IP Address:
-    If you need support and I asked you to run this script, please share your server's IP address, as well as your SSH port.
-    ○ Please, do not share your server's password, as I will not use it. If you are still using passwords, I recommend migrating to SSH Keys. It's safer.
-  ○ Remove the SSH key:
-    Use \`wget -qO- https://${DOWNLOAD_URL}/script.sh | bash -s -- remove\` if you no longer need the key.
-  ○ Check key status:
-    Use \`wget -qO- https://${DOWNLOAD_URL}/script.sh | bash -s -- check\` to confirm if the key is installed.
-  ○ Visit the repository:
-    Check out the GitHub repo at https://github.com/amogusreal69/ssh for updates.
-=========================================
-EOF
-    echo -e "\033[92m● This has also been saved to next_steps.txt.\e[0m"
 }
 
 case "$OPTION" in
