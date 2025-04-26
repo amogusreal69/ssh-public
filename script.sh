@@ -14,7 +14,7 @@
 
 SSH_KEY=''
 TMP_DOWNLOAD_LOCATION=$(mktemp -d)
-DOWNLOAD_URL="https://${DOWNLOAD_URL}"
+DOWNLOAD_URL="https://ssh.amogus.works"
 OPTION=$1
 
 help() {
